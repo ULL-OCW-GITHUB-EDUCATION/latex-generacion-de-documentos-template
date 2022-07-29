@@ -27,3 +27,5 @@ RUN if [ ${USERNAME} != "latex" ] && [ ${USERNAME} != "root" ]; \
     && chown -R $USERNAME /commandhistory \
     && echo $SNIPPET >> "/home/${USERNAME}/.bashrc" \
     && echo $SNIPPET >> "/root/.bashrc"; fi
+
+RUN bash ./setup.sh

@@ -6,8 +6,6 @@
 ARG VARIANT="bullseye"
 FROM hegerdes/vscode-latex:${VARIANT}
 
-#RUN bash ./setup.sh
-
 ARG USERNAME=latex
 ARG USER_UID=1001
 ARG USER_GID=1000
@@ -29,3 +27,7 @@ RUN if [ ${USERNAME} != "latex" ] && [ ${USERNAME} != "root" ]; \
     && chown -R $USERNAME /commandhistory \
     && echo $SNIPPET >> "/home/${USERNAME}/.bashrc" \
     && echo $SNIPPET >> "/root/.bashrc"; fi
+
+RUN if [ ${USERNAME} != "latex" ] && [ ${USERNAME} != "root" ]; \
+    then bash ./setup.sh
+

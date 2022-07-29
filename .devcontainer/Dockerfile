@@ -6,7 +6,7 @@
 ARG VARIANT="bullseye"
 FROM hegerdes/vscode-latex:${VARIANT}
 
-RUN bash ./setup.sh
+#RUN bash ./setup.sh
 
 ARG USERNAME=latex
 ARG USER_UID=1001

@@ -29,5 +29,5 @@ RUN if [ ${USERNAME} != "latex" ] && [ ${USERNAME} != "root" ]; \
     && echo $SNIPPET >> "/root/.bashrc"; fi
 
 RUN if [ ${USERNAME} != "latex" ] && [ ${USERNAME} != "root" ]; \
-    then bash ./setup.sh
+    then pwd # bash ./setup.sh
 
